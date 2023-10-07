@@ -1,9 +1,7 @@
 /* makes widths and heights easir to style */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 
@@ -12,7 +10,6 @@ body {
   justify-content: center;
   padding: 0;
   margin: 0;
-  display: flex;
   width: 100vw;
   /* view width/height */
   height: 100vh;
@@ -21,10 +18,20 @@ body {
   background-color: whitesmoke;
 }
 
+
+.timerText {
+  position: default;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+
 /* container */
 .container {
   width: 800px;
   max-width: 80%;
+  height: 600px;
+  max-height: 80%;
   /* max width 80% will prevent content overflow */
   background-color: whitesmoke;
   border-radius: 2px;
@@ -57,7 +64,6 @@ body {
   background-color: gainsboro;
 
   font-size: 18px;
-  height: 120%;
   box-shadow: 0 0 1px 1px;
 
 }
@@ -128,7 +134,7 @@ p {
   font-size: 36px;
 }
 
-.timerText {
+/* .timerText {
   margin: auto;
   width: 25%;
   padding: 25px;
@@ -137,9 +143,9 @@ p {
   justify-content: center;
   text-align: center;
 
-  font-size: 24px;
+  font-size: 24px; */
 
-}
+
 
 
 

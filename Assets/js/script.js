@@ -3,10 +3,66 @@ var questionContainerEl = document.getElementById("questionContainer")
 var questionTitleEl = document.getElementById("questionTitle")
 var optionsButtonEl = document.getElementById("optionBtns")
 var quizRules = document.getElementById("quizRules")
+var timerTextEl = document.getElementById("timerText")
+var secondsLeft = 180;
+//clicking button starts timer by writing its number to a global variable
+// startBtnEl.addEventListener('click', function () {
+//   let timerId = setInterval(function () {
+//     console.log('timer in progress', timerId)
+//   }, 1000);
+// });
+function quizTimer() {
+  // var secondsLeft = 180;   /// Sets interval in variable
+  console.log(secondsLeft)
+  var timerInterval = setInterval(function () {
+    secondsLeft--;
+    document.getElementById("timerText").textContent = secondsLeft;
+    // timerTextEl.textContent = secondsLeft;
 
 
+    if (secondsLeft === 0) {
+      // Stops execution of action at set interval
+      clearInterval(timerInterval);
+      // Calls function to create and append image
+      // sendMessage();
+    }
 
 
+  }, 1000);
+}
+// function quizTimer() {
+//   var timeLeft = 180;
+//   console.log(timeLeft);
+
+//   var timeInterval = setInterval(function () {
+//     if (timeLeft > 1) {
+//       timerTextEl.textContent = timeLeft;
+//       timeLeft--;
+//     } else {
+//       timerTextEl.textContent = ''; //`timeLeft` 0 set `timerEl` to an empty string
+//       clearInterval(timeInterval); // `clearInterval()` to stop the timer
+//       // prompt.alert("game over")
+//     }
+
+//   }, 1000);
+// }
+
+//   `setInterval()` method to call a function to be executed every 1000 milliseconds
+// As long as the `timeLeft` is greater than 1
+// Set the `textContent` of `timerEl` to show the remaining seconds, // decrement -1
+
+// 
+//     //   let timerId = setInterval(function () {
+//     //     console.log('timer in progress', timerId)
+//     //   }, 1000);
+//   };
+// function clockTick() {
+//   time--;
+//   timerEl.textContent = time;
+//   if (time <= 0) {
+//     quizEnd();
+//   }
+// }
 
 /* arrays to to hold list of questions with objects */
 var questionsArray = [
@@ -19,41 +75,27 @@ var questionsArray = [
     ],
     correct: "HyperText Markup Language",
   },
-
-
-  // function setQuizQuestions() {
-  //   questionTitle.textContent = questionsArray[i].question;
-
-  // };
-
-
-
-  // 
-  // {
-  //   question: "When navigating directories in the terminal, what does the command 'ls' do?",
-  //   options: [
-  //     { text: "it will make a new list file", correct: false },
-  //     { text: "creates a new folder", correct: false },
-  //     { text: "it will list the contents of a directory", correct: true },
-  //     { text: "opens a new terminal window at folder", correct: false },
-  //   ]
-  // }
 ]
+
+// function setQuizQuestions() {
+//   questionTitle.textContent = questionsArray[i].questio
+//   question: "When navigating directories in the terminal, what does the command 'ls' do?",
+//   options: [
+//     { text: "it will make a new list file", correct: false },
+//     { text: "creates a new folder", correct: false },
+//     { text: "it will list the contents of a directory", correct: true },
+//     { text: "opens a new terminal window at folder", correct: false },
+//   ]
+// }
+
 
 // question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
 //   options: [
 //     { text: "HyperText Markup Language", correct: true },
 //     { text: "Cascade Style Sheets", correct: false },
 //     { text: "Javascript", correct: false },
-//     { text: "World Wide Web", correct: false }
+//     { text: "World Wide Web", correct: false 
 
-startBtnEl.addEventListener('click', startGame);
-
-
-// function setCountdownTimer() {
-//  }
-// var shuffleQuestions
-// var currentQuestioni
 
 /* function startGame random array or for loop? */
 function startGame() {
@@ -62,11 +104,15 @@ function startGame() {
   startBtnEl.classList.add('hide') // will use html hide class on Start Quiz button
   questionContainerEl.classList.remove("hide") // will remove the hide class from options div 
   quizRules.classList.add('hide');
-  // setCountdownTimer();
-
-
-
+  quizTimer();
 }
+
+
+
+
+startBtnEl.addEventListener('click', startGame);
+// startBtnEl.addEventListener('click', quizTimer);
+
 // /* random? */
 // function nextQuestion() {
 //   showQuestion(questions[currentQuestioni])
@@ -83,52 +129,6 @@ function startGame() {
 // function showQuestion(question) {
 //   questionElement.innerText = question.question
 // }
-
-
-/* function selectOption  */
-// function selectOption() {
-
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // var body = document.body;
 
 // var startBtn = document.querySelector(".startButton");
@@ -144,36 +144,18 @@ function startGame() {
 // // var quizQuestion = document.createElement("h2");
 // // var questionList = document.createElement("ul");
 
-
-
 // // Selects element by class
 // var timerEl = document.querySelector(".timer");
-
-
 
 // // h1El.textContent = "Coding Quiz Challenge";
 // // quizQuestion.textContent = "Clicking the 'Start Quiz' button will start a 5 minute timer!";
 // // startBtn.textContent = "Start Quiz";
-
 
 // // // quizQuestion.textContent = "What command is used to create a variable where the value stored cannot be changed dynamically?";
 // // q1.textContent = "let";
 // // q2.textContent = "var";
 // // q3.textContent = "function";
 // // q4.textContent = "const";
-
-
-
-
-
-
-
-
-
-// // // h1El.setAttribute("style", "margin:auto; width:50%; padding: 25px 25px; text-align:center;");
-// // allContent.setAttribute("style", "margin: 0 auto; display: block; padding: 25px 25px; text-align:center;");
-// // sBtn.setAttribute("style", "background-color: lightGreen; border: 1px solid; border - color: black;border - radius: 5px;box - shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;color: hsl(0, 0 %, 100 %);display: inline - block;font - size: 22px;line - height: 22px;margin: 16px 16px 16px 20px;padding: 14px 34px; text-align: center;cursor: pointer; margin: 0 auto; display: block;");
-
 
 // // The startGame function is called when the start button is clicked
 // // quizQuestion.textContent = "What command is used to create a variable where the value stored cannot be changed dynamically?";
@@ -208,10 +190,7 @@ function startGame() {
 //     }
 
 //   }, 1000);
-// };
-
-
-// // function countdown() {
+// };// // function countdown() {
 // //   var timeLeft = 180;
 
 // //   var timeInterval = setInterval(function () {
@@ -257,6 +236,5 @@ be thinking about an array of objects might be useful
 use functions to control flow
 no questions/answeers in html
 how can we genearte each new question and aswers on demand
-get quiz to work with one or two questions
-
-*/
+get quiz to work with one or two question 
+**/
