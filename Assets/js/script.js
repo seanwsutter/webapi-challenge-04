@@ -5,107 +5,88 @@ var optionsButtonEl = document.getElementById("optionBtns")
 var quizRules = document.getElementById("quizRules")
 var timerTextEl = document.getElementById("timerText")
 var secondsLeft = 180;
-//clicking button starts timer by writing its number to a global variable
-// startBtnEl.addEventListener('click', function () {
-//   let timerId = setInterval(function () {
-//     console.log('timer in progress', timerId)
-//   }, 1000);
-// });
+var optionAEl = document.getElementById("optionA")
+var optionBEl = document.getElementById("optionB")
+var optionCEl = document.getElementById("optionC")
+var optionDEl = document.getElementById("optionD")
+
+
 function quizTimer() {
-  // var secondsLeft = 180;   /// Sets interval in variable
-  console.log(secondsLeft)
+  // var secondsLeft = 180;   
+  // console.log(secondsLeft)
   var timerInterval = setInterval(function () {
     secondsLeft--;
     // document.getElementById("timerText").textContent = secondsLeft;
     timerTextEl.textContent = "Quiz Timer: " + secondsLeft + " seconds left";
-    // console.log("seconds left:", secondsLeft); // one line
-
-
-    if (secondsLeft === 0) { // Stops execution of action at set interval
-      clearInterval(timerInterval);
-
+    // console.log("seconds left:", secondsLeft); // one line?
+    if (secondsLeft === 0) {
+      // timerTextEl.textContent = '';
+      clearInterval(timerInterval); // Stops timer
     }
-
-
   }, 1000);
 }
-// function quizTimer() {
-//   var timeLeft = 180;
-//   console.log(timeLeft);
-
-//   var timeInterval = setInterval(function () {
-//     if (timeLeft > 1) {
-//       timerTextEl.textContent = timeLeft;
-//       timeLeft--;
-//     } else {
-//       timerTextEl.textContent = ''; //`timeLeft` 0 set `timerEl` to an empty string
-//       clearInterval(timeInterval); // `clearInterval()` to stop the timer
-//     }
 
 /* arrays to to hold list of questions with objects */
 var questionsArray = [
   {
     question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
-    options: [{ text: "HyperText Markup Language" },
-    { text: "Cascade Style Sheets" },
-    { text: "Javascript" },
-    { text: "World Wide Web" }
+    options: [{ text: "HyperText Markup Language", correct: true },
+    { text: "Cascade Style Sheets", correct: false },
+    { text: "Javascript", correct: false },
+    { text: "World Wide Web", correct: false }
     ],
-    correct: "HyperText Markup Language",
+
+  },
+  {
+    question: "When navigating directories in the terminal, what does the command 'ls' do?",
+    options: [{ text: "it will make a new list file", correct: false },
+    { text: "creates a new folder", correct: false },
+    { text: "it will list the contents of a directory", correct: true },
+    { text: "opens a new terminal window at folder", correct: false },
+    ],
+
   },
 ]
 
-// function setQuizQuestions() {
-//   questionTitle.textContent = questionsArray[i].questio
-//   question: "When navigating directories in the terminal, what does the command 'ls' do?",
-//   options: [
-//     { text: "it will make a new list file", correct: false },
-//     { text: "creates a new folder", correct: false },
-//     { text: "it will list the contents of a directory", correct: true },
-//     { text: "opens a new terminal window at folder", correct: false },
-//   ]
-// }
+function setQuizQuestions() {
+  for (var i = 0; i < questionsArray.length; i++) {
+    questionTitleEl.textContent = questionsArray[i].question
+
+    optionAEl.textContent = questionsArray[i].options[0].text
+    optionBEl.textContent = questionsArray[i].options[1].text
+    optionCEl.textContent = questionsArray[i].options[2].text
+    optionDEl.textContent = questionsArray[i].options[3].text
+
+  }
 
 
-// question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
-//   options: [
-//     { text: "HyperText Markup Language", correct: true },
-//     { text: "Cascade Style Sheets", correct: false },
-//     { text: "Javascript", correct: false },
-//     { text: "World Wide Web", correct: false 
+}
 
+function checkAnswer() {
+  var a
 
-/* function startGame random array or for loop? */
+}
+
+/* function startGame */
 function startGame() {
-  console.log("check");
+  console.log("checking..");
 
-  startBtnEl.classList.add('hide') // will use html hide class on Start Quiz button
-  questionContainerEl.classList.remove("hide") // will remove the hide class from options div 
+  startBtnEl.classList.add('hide'); // will use html hide class on Start Quiz button
+  questionContainerEl.classList.remove("hide"); // will remove the hide class from options div 
   quizRules.classList.add('hide');
+  optionsButtonEl.classList.remove("hide");
   quizTimer();
+  setQuizQuestions();
+
 }
 
 
 
-
-startBtnEl.addEventListener('click', startGame);
+// optionAEl.addEventListener('click')
+startBtnEl.addEventListener('click', startGame, quizTimer);
 // startBtnEl.addEventListener('click', quizTimer);
 
-// /* random? */
-// function nextQuestion() {
-//   showQuestion(questions[currentQuestioni])
 
-// shuffleQuestions = questions.sort(() => Math.random() - .5) // ES6 arrow function, TLDR it random selects question
-//   currentQuestioni = 0
-//   nextQuestion()
-// }
-
-// function nextQuestion() {
-//   showQuestion(shuffleQuestions[currentQuestioni])
-
-// }
-// function showQuestion(question) {
-//   questionElement.innerText = question.question
 // }
 // var body = document.body;
 
@@ -139,56 +120,20 @@ startBtnEl.addEventListener('click', startGame);
 // // quizQuestion.textContent = "What command is used to create a variable where the value stored cannot be changed dynamically?";
 // // questionList.textContent = "Select one option";
 
-// // q1.textContent = "let";
-// // q2.textContent = "var";
-// // q3.textContent = "function";
-// // q4.textContent = "const";
-
-// // isWin = false;
-// // timerCount = 300;
-// // // Prevents start button from being clicked when round is in progress
-// // startQuizButton.disabled = true;
-// // renderBlanks()
-// // startTimer()
-
-
-// function setTime() {
-//   var secondsLeft = 180;
-
-//   // Sets interval in variable
-//   var timerInterval = setInterval(function () {
-//     secondsLeft--;
-//     timerEl.textContent = secondsLeft + " seconds remaining";
-
-//     if (secondsLeft === 0) {
-//       // Stops execution of action at set interval
-//       clearInterval(timerInterval);
-//       // Calls function to create and append image
-//       // sendMessage();
+// function quizTimer() {
+//   var timeLeft = 180;
+//   console.log(timeLeft);
+//   var timeInterval = setInterval(function () {
+//     if (timeLeft > 1) {
+//       timerTextEl.textContent = timeLeft;
+//       timeLeft--;
+//     } else {
+//
+//       clearInterval(timeInterval); // `clearInterval()` to stop the timer
 //     }
 
-//   }, 1000);
-// };// // function countdown() {
-// //   var timeLeft = 180;
 
-// //   var timeInterval = setInterval(function () {
-// //     if (timeLeft > 1) {
-// //       timerEl.textContent = timeLeft + ' seconds remaining';
-// //       timeLeft--;
 
-// // `setInterval()` method to call a function to be executed every 1000 milliseconds
-// // As long as the `timeLeft` is greater than 1
-// // Set the `textContent` of `timerEl` to show the remaining seconds, // decrement -1
-
-// //     } else {
-// //       // Once `timeLeft` gets to 0, set `timerEl` to an empty string
-// //       timerEl.textContent = '';
-// //       // Use `clearInterval()` to stop the timer
-// //       clearInterval(timeInterval);
-// //       prompt.alert("game over")
-// //     }
-// //   }, 1000);
-// // 
 
 
 /* mini project pseudo

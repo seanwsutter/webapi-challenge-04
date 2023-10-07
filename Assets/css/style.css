@@ -1,6 +1,5 @@
 /* makes widths and heights easir to style */
 * {
-  box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
@@ -52,20 +51,24 @@ body {
   display: grid;
   grid-template-columns: repeat(1, auto);
   gap: 15px;
-  margin: 30px;
+  margin: auto;
   font-size: 20px;
 }
 
 /** answer button */
 .buttonClass {
-  border: 2px solid lightgray;
+
+  font-size: 20px;
+  border: 2px solid white;
   border-radius: 2px;
   padding: 10px;
   background-color: gainsboro;
-
+  margin-top: 15px;
   font-size: 18px;
+  line-height: 18px;
   box-shadow: 0 0 1px 1px;
-
+  gap: 10px;
+  height: 40px;
 }
 
 /** simple button hover highlight */
@@ -116,7 +119,8 @@ body {
   display: none;
 }
 
-p {
+p,
+#questionTitle {
   /* display: flex;
   justify-content: center; */
   text-align: center;
@@ -133,6 +137,7 @@ p {
 
   font-size: 36px;
 }
+
 
 /* .timerText {
   margin: auto;
