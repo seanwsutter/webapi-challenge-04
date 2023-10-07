@@ -1,66 +1,95 @@
 var startBtnEl = document.getElementById("startBtn")
 var questionContainerEl = document.getElementById("questionContainer")
-var questionElement = document.getElementById("question")
+var questionTitleEl = document.getElementById("questionTitle")
 var optionsButtonEl = document.getElementById("optionBtns")
+var quizRules = document.getElementById("quizRules")
 
-var shuffleQuestions
-var currentQuestioni
+
+
+
 
 /* arrays to to hold list of questions with objects */
-var questions = [
+var questionsArray = [
   {
     question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
-    options: [ // added 2nd array
-      { text: "HyperText Markup Language", correct: true },
-      { text: "Cascade Style Sheets", correct: false },
-      { text: "Javascript", correct: false },
-      { text: "World Wide Web", correct: false }
-    ]
+    options: [{ text: "HyperText Markup Language" },
+    { text: "Cascade Style Sheets" },
+    { text: "Javascript" },
+    { text: "World Wide Web" }
+    ],
+    correct: "HyperText Markup Language",
   },
-  {
-    question: "When navigating directories in the terminal, what does the command 'ls' do?",
-    options: [
-      { text: "it will make a new list file", correct: false },
-      { text: "creates a new folder", correct: false },
-      { text: "it will list the contents of a directory", correct: true },
-      { text: "opens a new terminal window at folder", correct: false },
-    ]
-  }
+
+
+  // function setQuizQuestions() {
+  //   questionTitle.textContent = questionsArray[i].question;
+
+  // };
+
+
+
+  // 
+  // {
+  //   question: "When navigating directories in the terminal, what does the command 'ls' do?",
+  //   options: [
+  //     { text: "it will make a new list file", correct: false },
+  //     { text: "creates a new folder", correct: false },
+  //     { text: "it will list the contents of a directory", correct: true },
+  //     { text: "opens a new terminal window at folder", correct: false },
+  //   ]
+  // }
 ]
+
+// question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
+//   options: [
+//     { text: "HyperText Markup Language", correct: true },
+//     { text: "Cascade Style Sheets", correct: false },
+//     { text: "Javascript", correct: false },
+//     { text: "World Wide Web", correct: false }
 
 startBtnEl.addEventListener('click', startGame);
 
-/* function startGame */
+
+// function setCountdownTimer() {
+//  }
+// var shuffleQuestions
+// var currentQuestioni
+
+/* function startGame random array or for loop? */
 function startGame() {
   console.log("check");
 
   startBtnEl.classList.add('hide') // will use html hide class on Start Quiz button
-  shuffleQuestions = questions.sort(() => Math.random() - .5) // ES6 arrow function, TLDR it random selects question
-  currentQuestioni = 0
   questionContainerEl.classList.remove("hide") // will remove the hide class from options div 
-  nextQuestion()
+  quizRules.classList.add('hide');
+  // setCountdownTimer();
+
+
 
 }
-// /* function nextQuestion */
+// /* random? */
 // function nextQuestion() {
 //   showQuestion(questions[currentQuestioni])
 
+// shuffleQuestions = questions.sort(() => Math.random() - .5) // ES6 arrow function, TLDR it random selects question
+//   currentQuestioni = 0
+//   nextQuestion()
 // }
 
-function nextQuestion() {
-  showQuestion(shuffleQuestions[currentQuestioni])
+// function nextQuestion() {
+//   showQuestion(shuffleQuestions[currentQuestioni])
 
-}
-function showQuestion(question) {
-  questionElement.innerText = question.question
-}
+// }
+// function showQuestion(question) {
+//   questionElement.innerText = question.question
+// }
 
 
 /* function selectOption  */
-function selectOption() {
+// function selectOption() {
 
 
-}
+// }
 
 
 

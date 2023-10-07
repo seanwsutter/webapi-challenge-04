@@ -10,31 +10,40 @@
 </head>
 
 <body>
+  <!-- <header>
+    <div class="quizTitle">Coding Quiz Challenge</div>
+  </header> -->
 
-  <!--container for question and start & next buttons-->
+  <!--container for question and start button -->
   <div class="container">
-    <div id="questionContainer" class="hide"> <!--id for js, class of hide = hidden by default-->
-      <div id="question">
-        'Start Quiz' will ask four coding related questions and start a timer of 3 minutes.
-        Incorrect answers will subtract 30 seconds from remaining time
+    <div class="quizTitle">Coding Quiz Challenge</div>
+
+    <p id="quizRules" class="">Clicking 'Start Quiz' will ask four coding related questions and start a timer of 3
+      minutes.<br><br>Incorrect answers will subtract 30 seconds from remaining time.<br><br>When finished log your
+      score.</p>
+    <div id="questionContainer"> <!--id for js, class of hide = hidden by default-->
+
+      <div id="questionTitleEl" class="">
+
       </div>
       <!-- div for 4 options -->
-      <div id="optionBtns" class="optionButtons">
-        <button class="buttonClass" id="optionA">A</button>
-        <button class="buttonClass" id="optionB">B</button>
-        <button class="buttonClass" id="optionC">C</button>
-        <button class="buttonClass" id="optionD">D</button>
-        <!-- <button class="buttonClassA" id="optionA">A</button>
-        <button class="buttonClassB" id="optionB">B</button>
-        <button class="buttonClassC" id="optionC">C</button>
-        <button class="buttonClassD" id="optionD">D</button> -->
+      <div id="fourOptions" class=""> <!-- parent of option buttons -->
+        <div id="optionBtns" class="optionButtons">
+          <!-- <button class="buttonClass" id="optionA"></button>
+          <button class="buttonClass" id="optionB"></button>
+          <button class="buttonClass" id="optionC"></button>
+          <button class="buttonClass" id="optionD"></button> -->
+          <!--<button class="buttonClass" id="optionA"></button>
+          <button class="buttonClass" id="optionB"></button>
+          <button class="buttonClass" id="optionC"></button>
+          <button class="buttonClass" id="optionD"></button>-->
+        </div>
       </div>
-
     </div>
 
-    <div class="otherButtons"> <!--div class for start and next buttons both w/ id and class-->
+    <div class="otherButtons"> <!-- div class for start button -->
       <button id="startBtn" class="startButton">Start Quiz</button>
-      <button id="nextBtn" class="nextButton hide">Next</button> <!-- NOTICE class has hide-->
+      <!-- <button id="nextBtn" class="nextButton hide">Next</button> NOTICE class hide -->
     </div>
   </div>
 
@@ -72,26 +81,4 @@
     </div>
     </container>
 
-        ---- QUIZ CONTAINER 
-        <div id="quizContainer" style="display: none"> 
-            <h2 id="questionHeading"></h2>
-            ----- <div id="answerChoices"> 
-                <ul>
-                    <div id="choices">
-                        <button id="answerChoiceA"></button>
-                    </div>
-                    <div>
-                        <button id="answerChoiceB"></button>
-                    </div>
-                    <div>
-                        <button id="answerChoiceC"></button>
-                    </div>
-                    <div>
-                        <button id="answerChoiceD"></button>
-                    </div>
-                </ul>
-            </div>
-</body>
-
-
--->
+        

@@ -8,15 +8,17 @@
 
 
 body {
+  display: flex;
+  justify-content: center;
   padding: 0;
   margin: 0;
   display: flex;
   width: 100vw;
   /* view width/height */
   height: 100vh;
-  justify-content: center;
+
   align-items: center;
-  background-color: grey
+  background-color: whitesmoke;
 }
 
 /* container */
@@ -24,19 +26,26 @@ body {
   width: 800px;
   max-width: 80%;
   /* max width 80% will prevent content overflow */
-  background-color: gainsboro;
+  background-color: whitesmoke;
   border-radius: 2px;
-  padding: 30px 30px;
+  padding: 30px;
   box-shadow: 0 0 3px 1px
     /* box shadow, x y blur spread */
 }
 
-/* all option buttons */
-.optionButtons {
+/* all option buttons flex or grid */
+/* .optionButtons {
   display: grid;
   grid-template-columns: repeat(1, auto);
   gap: 15px;
   margin: 30px 0;
+  font-size: 20px;
+} */
+.optionButtons {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  gap: 15px;
+  margin: 30px;
   font-size: 20px;
 }
 
@@ -44,70 +53,87 @@ body {
 .buttonClass {
   border: 2px solid lightgray;
   border-radius: 2px;
-  padding: 20px 5px;
-  background-color: whitesmoke;
-  height: 100%;
+  padding: 10px;
+  background-color: gainsboro;
+
   font-size: 18px;
+  height: 120%;
   box-shadow: 0 0 1px 1px;
 
 }
 
 /** simple button hover highlight */
+
+
 .buttonClass:hover {
   border-color: black;
 }
 
 /* question text */
-#question {
+.question {
   font-size: 20px;
 }
 
 
-/* start & next buttons */
+/* other buttons */
 .otherButtons {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px;
   gap: 10px
 }
 
 
-.startButton,
-.nextButton {
-  font-size: 22px;
-  font-weight: bold;
-  padding: 15px 30px;
-  gap: 10px;
+.startButton {
+  border: 2px solid white;
+  border-radius: 2px;
+  padding: 10px;
+  background-color: gainsboro;
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  box-shadow: 0 0 1px 1px;
+  gap: 20px;
 }
 
+.startButton:hover {
+  border-color: black;
+}
+
+/* .nextButton {
+
+} */
 
 /** will just display Start Quiz button */
 .hide {
   display: none;
 }
 
+p {
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
 
-/* header {
-  text-align: center;
-  padding: 20px;
-  color: slategray
+  font-size: 22px;
 }
-*/
-/* .title {
-  margin: auto;
-  width: 50%;
-  padding: 25px 25px;
+
+.quizTitle {
   text-align: center;
+  display: flex;
+  justify-content: center;
+
   font-size: 36px;
-} */
+}
 
 .timerText {
   margin: auto;
   width: 25%;
-  padding: 25px 25px;
+  padding: 25px;
   display: flex;
-  position: relative;
+
   justify-content: center;
   text-align: center;
 
@@ -118,11 +144,7 @@ body {
 
 
 
-/*
-h1 {
-  font-size: 36px;
-} 
-/* */
+
 /* .mainContent {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -137,35 +159,6 @@ h1 {
 
 }
 
-.startButton {
-  background-color: hsl(106, 91%, 35%);
-  border: 1px solid;
-  border-color: black;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
-  color: hsl(0, 0%, 100%);
-
-  font-size: 22px;
-
-  margin: auto;
-  padding: 14px 34px;
-  cursor: pointer;
-  display: flex;
-
-  justify-content: center;
-}
-
-.timer {
-  display: flex;
-  justify-content: center;
-} */
 
 
-/* 
-
-
-@media screen and (min-width: 600px) {
-  img {
-    min-width: 60%;
-  }
-} */
+*/
