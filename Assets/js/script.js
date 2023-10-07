@@ -16,15 +16,14 @@ function quizTimer() {
   console.log(secondsLeft)
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    document.getElementById("timerText").textContent = secondsLeft;
-    // timerTextEl.textContent = secondsLeft;
+    // document.getElementById("timerText").textContent = secondsLeft;
+    timerTextEl.textContent = "Quiz Timer: " + secondsLeft + " seconds left";
+    // console.log("seconds left:", secondsLeft); // one line
 
 
-    if (secondsLeft === 0) {
-      // Stops execution of action at set interval
+    if (secondsLeft === 0) { // Stops execution of action at set interval
       clearInterval(timerInterval);
-      // Calls function to create and append image
-      // sendMessage();
+
     }
 
 
@@ -41,28 +40,7 @@ function quizTimer() {
 //     } else {
 //       timerTextEl.textContent = ''; //`timeLeft` 0 set `timerEl` to an empty string
 //       clearInterval(timeInterval); // `clearInterval()` to stop the timer
-//       // prompt.alert("game over")
 //     }
-
-//   }, 1000);
-// }
-
-//   `setInterval()` method to call a function to be executed every 1000 milliseconds
-// As long as the `timeLeft` is greater than 1
-// Set the `textContent` of `timerEl` to show the remaining seconds, // decrement -1
-
-// 
-//     //   let timerId = setInterval(function () {
-//     //     console.log('timer in progress', timerId)
-//     //   }, 1000);
-//   };
-// function clockTick() {
-//   time--;
-//   timerEl.textContent = time;
-//   if (time <= 0) {
-//     quizEnd();
-//   }
-// }
 
 /* arrays to to hold list of questions with objects */
 var questionsArray = [
