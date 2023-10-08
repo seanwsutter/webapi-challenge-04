@@ -85,7 +85,7 @@ function startGame() {
   quizRules.classList.add('hide'); // hide quiz rules
   optionsButtonEl.classList.remove("hide"); // show button options
   quizTimer();
-  setQuizQuestions(); // cycle through question array
+  setQuizQuestions();
 }
 
 /*** check function ***/

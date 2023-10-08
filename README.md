@@ -22,5 +22,6 @@ When complete, save and display the user's score
 
 ## Preview
 
+![Preview](https://i.imgur.com/usCWVaE.png)
 
 
