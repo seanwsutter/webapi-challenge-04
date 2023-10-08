@@ -1,9 +1,9 @@
-/* makes widths and heights easir to style */
+/* global */
 * {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
-
+/* body */
 body {
   display: flex;
   justify-content: center;
@@ -17,16 +17,10 @@ body {
   background-color: whitesmoke;
 }
 
-
-.timerTextC {
-  position: default;
-  font-size: 24px;
-  display: flex;
-  justify-content: center;
-}
-
 /* container */
 .container {
+  align-items: center;
+  text-align: center;
   width: 800px;
   max-width: 80%;
   height: 600px;
@@ -39,6 +33,23 @@ body {
     /* box shadow, x y blur spread */
 }
 
+/* quiz title */
+.quizTitle {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  font-size: 36px;
+}
+
+/* timer text*/
+.timerText {
+  position: default;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+
 /* all option buttons flex or grid */
 /* .optionButtons {
   display: grid;
@@ -47,6 +58,7 @@ body {
   margin: 30px 0;
   font-size: 20px;
 } */
+
 .optionButtons {
   display: grid;
   grid-template-columns: repeat(1, auto);
@@ -55,9 +67,8 @@ body {
   font-size: 20px;
 }
 
-/** answer button */
+/** answer buttons */
 .buttonClass {
-
   font-size: 20px;
   border: 2px solid white;
   border-radius: 2px;
@@ -71,19 +82,11 @@ body {
   height: 40px;
 }
 
-/** simple button hover highlight */
-
-
 .buttonClass:hover {
   border-color: black;
 }
 
 /* question text */
-.question {
-  font-size: 20px;
-}
-
-
 /* other buttons */
 .otherButtons {
   display: flex;
@@ -93,8 +96,12 @@ body {
   gap: 10px
 }
 
-
+/* start button */
 .startButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border: 2px solid white;
   border-radius: 2px;
   padding: 10px;
@@ -110,15 +117,12 @@ body {
   border-color: black;
 }
 
-/* .nextButton {
-
-} */
-
-/** will just display Start Quiz button */
+/* hide */
 .hide {
   display: none;
 }
 
+/* text */
 p,
 #questionTitle {
   /* display: flex;
@@ -130,16 +134,8 @@ p,
   font-size: 22px;
 }
 
-.quizTitle {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-
-  font-size: 36px;
-}
-
-
-/* .timerText {
+/*  comments 
+.timerText {
   margin: auto;
   width: 25%;
   padding: 25px;
@@ -149,27 +145,3 @@ p,
   text-align: center;
 
   font-size: 24px; */
-
-
-
-
-
-
-
-/* .mainContent {
-  background-color: hsl(0, 0%, 100%);
-  border-radius: 5px;
-  border-width: 1px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
-  display: flex;
-
-}
-
-
-
-*/

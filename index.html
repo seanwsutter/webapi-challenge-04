@@ -5,40 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./Assets/css/style.css">
-  <!--<script defer src="script.js"></script>  // defer will make it load after body?-->
   <title>Coding Quiz Challenge</title>
 </head>
 
 <body>
-
-  <!-- <div class="quizTitle">Coding Quiz Challenge</div> -->
   <div class="container"> <!-- container -->
     <div class="quizTitle">Coding Quiz Challenge</div>
-    <h2 class="timerTextC" id="timerText">Quiz Timer: 180 seconds</h2>
+    <h2 id="timerText">Quiz Timer: 180 seconds</h2>
 
-    <p id="quizRules" class="">Clicking 'Start Quiz' will ask four coding related questions and start a timer of 3
-      minutes.<br><br>Incorrect answers will subtract 30 seconds from remaining time.<br><br>When finished log your
-      score.</p>
-    <div id="questionContainer"> <!-- class of hide = hidden by default-->
+    <p id="quizRules" class="">
+      Clicking 'Start Quiz' will ask four coding related questions and start a timer of 3 minutes.
+      <br><br>Incorrect answers will subtract 30 seconds from remaining time.
+      <br><br>When finished log your score.
+    </p>
 
-      <div id="questionTitle" class=""></div>
-      <div id="fourOptions" class=""> <!-- div for 4 options? -->
-        <div class="optionButtons hide" id="optionBtns">
-          <button class="buttonClass" id="optionA"></button>
-          <button class="buttonClass" id="optionB"></button>
-          <button class="buttonClass" id="optionC"></button>
-          <button class="buttonClass" id="optionD"></button>
-          <!--<button class="buttonClass" id="optionA"></button>
-          <button class="buttonClass" id="optionB"></button>
-          <button class="buttonClass" id="optionC"></button>
-          <button class="buttonClass" id="optionD"></button>-->
-        </div>
+    <div id="questionContainer">
+      <div class="" id="questionTitle"></div>
+      <div class="optionButtons hide" id="optionBtns">
+        <button class="buttonClass" id="optionA"></button>
+        <button class="buttonClass" id="optionB"></button>
+        <button class="buttonClass" id="optionC"></button>
+        <button class="buttonClass" id="optionD"></button>
       </div>
     </div>
 
-    <div class="otherButtons"> <!-- div class for start button -->
-      <button id="startBtn" class="startButton">Start Quiz</button>
-      <!-- <button id="nextBtn" class="nextButton hide">Next</button>  -->
+    <div class="otherButtons">
+      <button class="startButton" id="startBtn">Start Quiz</button>
     </div>
   </div> <!-- cointainer -->
 
@@ -46,34 +38,30 @@
 </body>
 
 </html>
-<!--
-  
-  <h3 class=" timerText">Time Remaining:
-    <h2 class="timer"></h2>
-  </h3>
-  
-  <div id="mainContent" class="mainContent">
-    <p id="question">Once you start the quiz you have 3 minutes to answer 5 questions. Incorrect answers will
-      subtract 30 seconds from time remaining as penalty</p>
-  </div>
-  
-  <button class="startButton" id="startButton">Start Quiz</button>
+
+
+
+<!-- comments
+
+hide class 
+
+<script defer src="script.js"></script>  // load after body?
+
+<button class="startButton" id="startButton">Start Quiz</button>
   
   <section id= "countdownTimer" style="display: none">
     Time Remaining: <span id="timer"></span>
   </section>
 
-    
-
-    <container>
-    <div id="homeContainer" class="none">
-        <h1>Welcome to the Code Quiz!</h1>
-        <p>Try answering the following code-related questions within the time limit. You have 75 seconds to complete the quiz.</p> 
-        <p> Don't forget: For each incorrect answer, you will be penalized 5 seconds from the timer. If the timer hits 0, it's game over!</p>
-        <p><strong>Ready to test your coding knowledge? Let's get started!</strong></p>
-        <br>
-        <button id="startBtn">Start Quiz</button>
-    </div>
-    </container>
+<container>
+  <div id="homeContainer" class="none">
+  <h1>Welcome to the Code Quiz!</h1>
+      <p>Try answering the following code-related questions within the time limit. You have 75 seconds to complete the quiz.</p> 
+      <p> Don't forget: For each incorrect answer, you will be penalized 5 seconds from the timer. If the timer hits 0, it's game over!</p>
+      <p><strong>Ready to test your coding knowledge? Let's get started!</strong></p>
+      <br>
+    <button id="startBtn">Start Quiz</button>
+  /div>
+</container>
 
         
