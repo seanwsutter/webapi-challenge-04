@@ -9,22 +9,17 @@ var optionAEl = document.getElementById("optionA")
 var optionBEl = document.getElementById("optionB")
 var optionCEl = document.getElementById("optionC")
 var optionDEl = document.getElementById("optionD")
-var correct;
+var buttonClassEl = document.querySelector(".buttonClass")
 var a;
 var answerA;
-
-
 
 function quizTimer() {
   // var secondsLeft = 180;   
   // console.log(secondsLeft)
   var timerInterval = setInterval(function () {
     secondsLeft--;
-    // document.getElementById("timerText").textContent = secondsLeft;
     timerTextEl.textContent = "Quiz Timer: " + secondsLeft + " seconds left";
-    // console.log("seconds left:", secondsLeft); // one line?
     if (secondsLeft === 0) {
-      // timerTextEl.textContent = '';
       clearInterval(timerInterval); // Stops timer
     }
   }, 1000);
@@ -35,13 +30,10 @@ var questionsArray = [
     question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
     options: [
       { a: "HyperText Markup Language", correct: true },
-      { b: "Cascade Style Sheets" },
-      { c: "Javascript" },
-      { d: "World Wide Web" },
+      { b: "Cascade Style Sheets", correct: false },
+      { c: "Javascript", correct: false },
+      { d: "World Wide Web", correct: false },
     ],
-
-    correctAnswer: a
-
 
 
   },
@@ -53,52 +45,24 @@ var questionsArray = [
       { c: "it will list the contents of a directory", correct: true },
       { d: "opens a new terminal window at folder", correct: false },
     ],
+    correct: true
 
   },
 ]/* arrays to to hold list of questions with objects */
-optionAEl.addEventListener('click', function (event) {
+buttonClassEl.addEventListener('click', checkAnswer)
 
-  correctAnswer = questionsArray[0].correctAnswer;
-  console.log("correctAnswer")
+function checkAnswer() {
+  console.log("checking..");
+  if (questionsArray.options.correct === true) {
+    console.log("correct");
 
-  //   correctAnswer;
-})
-// check answer
+  }
 
-// var questionsArray = [
-//   {
-//     question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
-//     options: [
-//       { a: "HyperText Markup Language", correct: true },
-//       { b: "Cascade Style Sheets", correct: false },
-//       { c: "Javascript", correct: false },
-//       { d: "World Wide Web", correct: false }
-//     ],
-
-//   },
-//   {
-//     question: "When navigating directories in the terminal, what does the command 'ls' do?",
-//     options: [
-//       { a: "it will make a new list file", correct: false },
-//       { b: "creates a new folder", correct: false },
-//       { c: "it will list the contents of a directory", correct: true },
-//       { d: "opens a new terminal window at folder", correct: false },
-//     ],
-
-//   },
-// ]
+}
 
 function setQuizQuestions() {
   for (var i = 0; i < questionsArray.length; i++) {
     console.log(questionsArray[i]);
-    // if (answer == questionsArray[i][1]) {
-    //   console.log("Correct " + questionsArray[i][1]);
-
-    // }
-    // else {
-    //   console.log("Incorrect, the correct answer was " + questionsArray[i][1]);
-    // }
-
     questionTitleEl.textContent = questionsArray[i].question
 
     optionAEl.textContent = questionsArray[i].options[0].a
@@ -108,13 +72,6 @@ function setQuizQuestions() {
   }
 }
 // function checkAnswer() {
-
-
-
-//   if 
-
-// }
-
 /* function startGame */
 function startGame() {
   console.log("checking..");
@@ -182,10 +139,6 @@ startBtnEl.addEventListener('click', startGame, quizTimer);
 //
 //       clearInterval(timeInterval); // `clearInterval()` to stop the timer
 //     }
-
-
-
-
 
 /* mini project pseudo
 
