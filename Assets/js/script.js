@@ -9,6 +9,10 @@ var optionAEl = document.getElementById("optionA")
 var optionBEl = document.getElementById("optionB")
 var optionCEl = document.getElementById("optionC")
 var optionDEl = document.getElementById("optionD")
+var correct;
+var a;
+var answerA;
+
 
 
 function quizTimer() {
@@ -26,46 +30,90 @@ function quizTimer() {
   }, 1000);
 }
 
-/* arrays to to hold list of questions with objects */
 var questionsArray = [
   {
     question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
-    options: [{ text: "HyperText Markup Language", correct: true },
-    { text: "Cascade Style Sheets", correct: false },
-    { text: "Javascript", correct: false },
-    { text: "World Wide Web", correct: false }
+    options: [
+      { a: "HyperText Markup Language", correct: true },
+      { b: "Cascade Style Sheets" },
+      { c: "Javascript" },
+      { d: "World Wide Web" },
     ],
+
+    correctAnswer: a
+
+
 
   },
   {
     question: "When navigating directories in the terminal, what does the command 'ls' do?",
-    options: [{ text: "it will make a new list file", correct: false },
-    { text: "creates a new folder", correct: false },
-    { text: "it will list the contents of a directory", correct: true },
-    { text: "opens a new terminal window at folder", correct: false },
+    options: [
+      { a: "it will make a new list file", correct: false },
+      { b: "creates a new folder", correct: false },
+      { c: "it will list the contents of a directory", correct: true },
+      { d: "opens a new terminal window at folder", correct: false },
     ],
 
   },
-]
+]/* arrays to to hold list of questions with objects */
+optionAEl.addEventListener('click', function (event) {
+
+  correctAnswer = questionsArray[0].correctAnswer;
+  console.log("correctAnswer")
+
+  //   correctAnswer;
+})
+// check answer
+
+// var questionsArray = [
+//   {
+//     question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
+//     options: [
+//       { a: "HyperText Markup Language", correct: true },
+//       { b: "Cascade Style Sheets", correct: false },
+//       { c: "Javascript", correct: false },
+//       { d: "World Wide Web", correct: false }
+//     ],
+
+//   },
+//   {
+//     question: "When navigating directories in the terminal, what does the command 'ls' do?",
+//     options: [
+//       { a: "it will make a new list file", correct: false },
+//       { b: "creates a new folder", correct: false },
+//       { c: "it will list the contents of a directory", correct: true },
+//       { d: "opens a new terminal window at folder", correct: false },
+//     ],
+
+//   },
+// ]
 
 function setQuizQuestions() {
   for (var i = 0; i < questionsArray.length; i++) {
+    console.log(questionsArray[i]);
+    // if (answer == questionsArray[i][1]) {
+    //   console.log("Correct " + questionsArray[i][1]);
+
+    // }
+    // else {
+    //   console.log("Incorrect, the correct answer was " + questionsArray[i][1]);
+    // }
+
     questionTitleEl.textContent = questionsArray[i].question
 
-    optionAEl.textContent = questionsArray[i].options[0].text
-    optionBEl.textContent = questionsArray[i].options[1].text
-    optionCEl.textContent = questionsArray[i].options[2].text
-    optionDEl.textContent = questionsArray[i].options[3].text
-
+    optionAEl.textContent = questionsArray[i].options[0].a
+    optionBEl.textContent = questionsArray[i].options[1].b
+    optionCEl.textContent = questionsArray[i].options[2].c
+    optionDEl.textContent = questionsArray[i].options[3].d
   }
-
-
 }
+// function checkAnswer() {
 
-function checkAnswer() {
-  var a
 
-}
+
+//   if 
+
+// }
 
 /* function startGame */
 function startGame() {
@@ -80,9 +128,12 @@ function startGame() {
 
 }
 
+// object.addEventListener("click", myScript);
 
 
-// optionAEl.addEventListener('click')
+// optionAEl.addEventListener('click', function (event) {
+
+// })
 startBtnEl.addEventListener('click', startGame, quizTimer);
 // startBtnEl.addEventListener('click', quizTimer);
 
