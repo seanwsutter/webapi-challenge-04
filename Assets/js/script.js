@@ -9,35 +9,28 @@ var questionTitleEl = document.getElementById("questionTitle")
 
 var startBtnEl = document.getElementById("startBtn")
 var optionsButtonEl = document.getElementById("optionBtns")
-var buttonClassEl = document.querySelector(".buttonClass")
+var buttonClassEl = document.getElementById("optionBtns")
 
 var optionAEl = document.getElementById("optionA")
 var optionBEl = document.getElementById("optionB")
 var optionCEl = document.getElementById("optionC")
 var optionDEl = document.getElementById("optionD")
 
+var i = 0;
+
 /*** questionsArray ***/
 var questionsArray = [
   {
     question: "What is the basic scripting language used by web browsers to render pages on the world wide web.",
-    options: [
-      { optionA: "HyperText Markup Language" },
-      { optionB: "Cascade Style Sheets" },
-      { optionC: "Javascript" },
-      { optionD: "World Wide Web" },
-    ],
-    correctAnswer: "HyperText Markup Language"
+    options: ["HyperText Markup Language", "Cascade Style Sheets", "Javascript", "World Wide Web"],
+    correctAnswer: "HyperText Markup Language",
   },
   {
     question: "When navigating directories in the terminal, what does the command 'ls' do?",
-    options: [
-      { optionA: "it will make a new list file" },
-      { optionB: "creates a new folder" },
-      { optionC: "it will list the contents of current directory" },
-      { optionD: "opens a new terminal window at folder" },
-    ],
-    correctAnswer: "it will list the contents of current directory"
-  },
+    options: ["it will make a new list file", "creates a new folder", "it will list the contents of current directory", "opens a new terminal window at folder"],
+    correctAnswer: "it will list the contents of current directory",
+  }
+
 ]
 
 /*** quizTimer function ***/
@@ -56,7 +49,7 @@ function quizTimer() {
 /*** function checkAnswer ***/
 function checkAnswer() {
   console.log("checking..");
-  if (questionsArray[0].correctAnswer) {
+  if (questionsArray[i].correctAnswer) {
     console.log("correct");
   } else {
 
@@ -65,17 +58,23 @@ function checkAnswer() {
 
 /*** function setQuizQuestions ***/
 function setQuizQuestions() {
-  for (var i = 0; i < questionsArray.length; i++) {
+  // for (var i = 0; i < questionsArray.length; i++) {
+  if (i === questionsArray.length || secondsLeft <= 0) { // out of questions / timer =0
+    return
+
+  } else {
     questionTitleEl.textContent = questionsArray[i].question
 
-    optionAEl.textContent = questionsArray[i].options[0].optionA
-    optionBEl.textContent = questionsArray[i].options[1].optionB
-    optionCEl.textContent = questionsArray[i].options[2].optionC
-    optionDEl.textContent = questionsArray[i].options[3].optionD
+    optionAEl.textContent = questionsArray[i].options[0]
+    optionBEl.textContent = questionsArray[i].options[1]
+    optionCEl.textContent = questionsArray[i].options[2]
+    optionDEl.textContent = questionsArray[i].options[3]
 
-    console.log(questionsArray[i]);
   }
+
+  // console.log(questionsArray[i]);
 }
+
 
 /*** function startGame ***/
 function startGame() {
@@ -89,7 +88,8 @@ function startGame() {
 }
 
 /*** check function ***/
-buttonClassEl.addEventListener("click", function (click) {
+// buttonClassEl.addEventListener("click", function (click) {
+function check(click) {
   for (var i = 0; i < questionsArray.length; i++)
     if (i === questionsArray.length) {
       return
@@ -102,37 +102,40 @@ buttonClassEl.addEventListener("click", function (click) {
 
       if (element.textContent === correct) {
         console.log("good");
-        questionTitleEl.textContent = questionsArray.question[0]
+        setQuizQuestions()
+        // questionTitleEl.textContent = questionsArray[i].question[0]
         console.log("wat");
-        // it loops back to load the next question
-        // addQuestion();
 
-        // scoring happens as the next question loads
-
-        // score++;
-        // console.log("score:" + score);
-        // showCorrectResult();
-        // showScore();
-        // saveScore();
       } else {
         console.log("incorrect, -30 seconds");
         secondsLeft = secondsLeft - 30;
-        // console.log("score:" + score);
-        // showIncorrectResult();
-        // showScore();
-        // if (i === questionsArray.length) {
-        //   // saveScore();
-        // }
+        setQuizQuestions()
+
+
       }
     }
-});
+};
 
-buttonClassEl.addEventListener('click', checkAnswer)
+buttonClassEl.addEventListener('click', check);
 startBtnEl.addEventListener('click', startGame, quizTimer);
 
 
+// it loops back to load the next question
+// addQuestion();
 
+// scoring happens as the next question loads
 
+// score++;
+// console.log("score:" + score);
+// showCorrectResult();
+// showScore();
+// saveScore();
+// console.log("score:" + score);
+// showIncorrectResult();
+// showScore();
+// if (i === questionsArray.length) {
+//   // saveScore();
+// }
 
 /** comments
 
