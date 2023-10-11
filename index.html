@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./Assets/css/style.css">
   <title>Coding Quiz Challenge</title>
+
 </head>
 
 <body>
@@ -32,7 +33,16 @@
     <div class="otherButtons">
       <button class="startButton" id="startBtn">Start Quiz</button>
     </div>
-  </div> <!-- cointainer -->
+
+    <!-- score -->
+    <div id="quizScore" class="hide">
+      <h2 id="timerText">Save your score!</h2>
+      <label for="initials">Enter initials:</label>
+      <input type="text" name="initialsArea" id="initials">
+      <button id="submitScoreButton" type="submit">Submit Score</button>
+    </div>
+
+  </div> <!-- container -->
 
   <script src="./Assets/js/script.js"></script>
 </body>
