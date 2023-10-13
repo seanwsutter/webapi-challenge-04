@@ -17,8 +17,10 @@ var quizScoreEl = document.getElementById("quizScore");
 var finalScoreEl = document.getElementById("timerText");
 var initialsEl = document.querySelector("#initials");
 
-var secondsLeft = 180;
 var i = 0;
+var secondsLeft = 180;
+var timerInterval;
+
 
 /*** questionsArray ***/
 var questionsArray = [
@@ -46,12 +48,12 @@ var questionsArray = [
 
 /*** quizTimer function ***/
 function quizTimer() {
-  // var secondsLeft = 180;
-  var timerInterval = setInterval(function () {
+  secondsLeft = 180;
+  timerInterval = setInterval(function () {
+
     secondsLeft--;
     timerTextEl.innerHTML = "Quiz Timer: " + secondsLeft + " seconds left";
     if (secondsLeft < 0 || secondsLeft === 0) {
-      clearInterval(timerInterval); // Stops timer
       quizEnd();
     }
   }, 1000);
@@ -128,6 +130,8 @@ startBtnEl.addEventListener('click', startGame, quizTimer);
 function quizEnd() {
   quizScoreEl.classList.remove('hide');
   questionContainerEl.classList.add("hide");
+  clearInterval(timerInterval);
+
   // console.log(secondsLeft);
   // timerTextEl = secondsLeft;
   // quizScoreEl.classList.remove('hide');
@@ -137,6 +141,7 @@ function quizEnd() {
 
 /* savingScore function */
 function saveScore() {
+  quizEnd();
   var initials = initialsEl.value.trim();
   if (initials !== "") {
     var scores = JSON.parse(window.localStorage.getItem("scores")) || [];
