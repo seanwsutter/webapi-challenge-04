@@ -24,4 +24,9 @@ When complete, save and display the user's score
 
 ![Preview](https://i.imgur.com/usCWVaE.png)
 
+## Links
+
+[GitHub Repository](https://github.com/seanwsutter/webapi-challenge-04)
+
+[GitHub Pages](https://seanwsutter.github.io/webapi-challenge-04/)
 
